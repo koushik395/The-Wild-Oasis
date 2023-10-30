@@ -37,7 +37,14 @@ function ConfirmDelete({ resourceName, onConfirm, disabled, onCloseModal }) {
         >
           Cancel
         </Button>
-        <Button variations="danger" disabled={disabled} onClick={onConfirm}>
+        <Button
+          variations="danger"
+          disabled={disabled}
+          onClick={() => {
+            onConfirm();
+            onCloseModal();
+          }}
+        >
           Delete
         </Button>
       </div>
